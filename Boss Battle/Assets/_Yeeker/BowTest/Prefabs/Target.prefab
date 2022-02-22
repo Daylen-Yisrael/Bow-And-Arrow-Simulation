@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8423932403154531771}
   m_Layer: 0
   m_Name: Target_Leg
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 6563989103205235887}
   m_Layer: 0
   m_Name: Target_Leg
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

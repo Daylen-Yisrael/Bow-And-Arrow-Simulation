@@ -1,3 +1,4 @@
+using System;
 using TMPro.EditorUtilities;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace _Yeeker.BowTest.Scripts
 
         void Start()
         {
-            _rb.isKinematic = true;
+            _rb.useGravity = false;
             _col.isTrigger = true;
             Debug.Log("Arrow Started");
         }
@@ -28,9 +29,9 @@ namespace _Yeeker.BowTest.Scripts
         {
             if (_canFire)
             {
-                _rb.isKinematic = false;
+                _rb.useGravity = true;
                 _col.isTrigger = false;
-                _rb.AddForce(transform.up * _arrowForce, ForceMode.Impulse);
+                _rb.AddForce(transform.up * _arrowForce, ForceMode.VelocityChange);
                 _canFire = false;
                 Debug.Log("Arrow has been shot");
 
@@ -43,6 +44,15 @@ namespace _Yeeker.BowTest.Scripts
             transform.SetParent(null);
             Debug.Log("Fire Button Started");
             _canFire = true;
+        }
+
+        void OnCollisionEnter(Collision collision)
+        {
+            if (!collision.gameObject.CompareTag("Bow"))
+            {
+                Debug.Log(collision.gameObject.name, gameObject);
+                _rb.constraints = RigidbodyConstraints.FreezeAll;
+            }
         }
     }
 }

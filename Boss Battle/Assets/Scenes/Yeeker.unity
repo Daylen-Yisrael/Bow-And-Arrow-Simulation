@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 1848277331}
   m_Layer: 0
   m_Name: Bow Tester
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,7 +851,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848277330}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9a5cadecd4ed95d4fb9df2484207fe3a, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -1024,7 +1024,7 @@ GameObject:
   - component: {fileID: 775825008653673498}
   m_Layer: 0
   m_Name: Bow
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1046,6 +1046,7 @@ MonoBehaviour:
   _fullyDrawn: {fileID: 573042171}
   _arrow: {fileID: 7453110557343302482, guid: a800a62c46b81a541965d0b01073930c, type: 3}
   _arrowForce: 10
+  _chargeTime: 0.5
 --- !u!65 &775825008653673497
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -24,7 +24,8 @@ namespace _Yeeker.BowTest.Scripts
 
         void Update()
         {
-            transform.position = _bowTester.position + Vector3.up * 0.5f;
+            Vector3 camPos = _bowTester.position + Vector3.up * 0.5f;
+            transform.position = Vector3.Lerp(transform.position, camPos, 1);
             
             float x = Input.GetAxisRaw("Mouse X") * mouseSens;
             float y = Input.GetAxisRaw("Mouse Y") * mouseSens;

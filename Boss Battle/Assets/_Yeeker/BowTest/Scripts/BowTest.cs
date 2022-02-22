@@ -45,7 +45,7 @@ namespace _Yeeker.BowTest.Scripts
 
             if (!_isDrawing)
             {
-                t -= Time.deltaTime;
+                t -= Time.deltaTime * 6f;
                 t = Mathf.Clamp(t, 0f, _chargeTime);
             }
 
@@ -69,6 +69,7 @@ namespace _Yeeker.BowTest.Scripts
             {
                 Destroy(obj);
                 _loaded = false;
+                _isDrawing = false;
             }
 
             if (Input.GetMouseButtonDown(0) && _loaded)
