@@ -9,22 +9,25 @@ namespace _Yeeker.BowTest.Scripts
         public Transform _arrowHolder;
         public Transform _bowString;
         public Transform _fullyDrawn;
-        
+
         public GameObject _arrow;
-        public float _arrowForce = 10;
+
         public float _chargeTime = 0.5f;
-        
+
+        public Vector2 _minMaxArrowForce = new Vector2(5f, 30f);
+        float _arrowForce;
+
         bool _isDrawing;
         bool _loaded;
         IArrow arrow;
         GameObject obj;
-        float t;
+        float _t;
 
         Vector3 stringStartPos;
 
         void Start()
         {
-            t = 0;
+            _t = 0;
             stringStartPos = _bowString.localPosition;
         }
 
@@ -38,22 +41,30 @@ namespace _Yeeker.BowTest.Scripts
         {
             if (_isDrawing)
             {
-                t += Time.deltaTime;
-                t = Mathf.Clamp(t, 0f, _chargeTime);
-                
+                _t += Time.deltaTime;
+                _t = Mathf.Clamp(_t, 0f, _chargeTime);
+
             }
 
             if (!_isDrawing)
             {
-                t -= Time.deltaTime * 6f;
-                t = Mathf.Clamp(t, 0f, _chargeTime);
+                _t -= Time.deltaTime * 6f;
+                _t = Mathf.Clamp(_t, 0f, _chargeTime);
             }
 
-            _bowString.localPosition = Vector3.Lerp(stringStartPos, _fullyDrawn.localPosition, t/_chargeTime);
+            _bowString.localPosition = Vector3.Lerp(stringStartPos, _fullyDrawn.localPosition, _t / _chargeTime);
+            _arrowForce = Remap(stringStartPos, _fullyDrawn.localPosition, _minMaxArrowForce.x, _minMaxArrowForce.y,
+                _bowString.localPosition);
         }
 
         void BowInput()
         {
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                Debug.Log("Arrow Force is " + _arrowForce);
+            }
+            
+            
             if (Input.GetKeyDown(KeyCode.Q) && !_loaded)
             {
 
@@ -64,7 +75,7 @@ namespace _Yeeker.BowTest.Scripts
                 _loaded = true;
                 arrow = obj.GetComponent<IArrow>();
             }
-            
+
             else if (Input.GetKeyDown(KeyCode.Q) && _loaded)
             {
                 Destroy(obj);
@@ -85,7 +96,27 @@ namespace _Yeeker.BowTest.Scripts
                 arrow = null;
             }
         }
-        
-        
+
+        float Remap(Vector3 iMin, Vector3 iMax, float oMin, float oMax, Vector3 v)
+        {
+            Vector3 t = VecInverseLerp(iMin, iMax, v);
+
+            return Mathf.Lerp(oMin, oMax, t.magnitude);
+        }
+
+        Vector3 VecInverseLerp(Vector3 min, Vector3 max, Vector3 v)
+        {
+            if (min == max)
+            {
+                return Vector3.zero;
+            }
+
+            float x = Mathf.InverseLerp(min.x, max.x, v.x);
+            float y = Mathf.InverseLerp(min.y, max.y, v.y);
+            float z = Mathf.InverseLerp(min.z, max.z, v.z);
+
+            Vector3 t = new Vector3(x, y, z);
+            return t;
+        }
     }
 }

@@ -1045,8 +1045,8 @@ MonoBehaviour:
   _bowString: {fileID: 1899402123963584511}
   _fullyDrawn: {fileID: 573042171}
   _arrow: {fileID: 7453110557343302482, guid: a800a62c46b81a541965d0b01073930c, type: 3}
-  _arrowForce: 10
   _chargeTime: 0.5
+  _minMaxArrowForce: {x: 1, y: 50}
 --- !u!65 &775825008653673497
 BoxCollider:
   m_ObjectHideFlags: 0

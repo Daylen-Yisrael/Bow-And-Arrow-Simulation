@@ -21,7 +21,6 @@ namespace _Yeeker.BowTest.Scripts
         {
             _rb.useGravity = false;
             _col.isTrigger = true;
-            Debug.Log("Arrow Started");
         }
 
 
@@ -33,8 +32,6 @@ namespace _Yeeker.BowTest.Scripts
                 _col.isTrigger = false;
                 _rb.AddForce(transform.up * _arrowForce, ForceMode.VelocityChange);
                 _canFire = false;
-                Debug.Log("Arrow has been shot");
-
             }
         }
 
@@ -42,7 +39,6 @@ namespace _Yeeker.BowTest.Scripts
         {
             _arrowForce = force;
             transform.SetParent(null);
-            Debug.Log("Fire Button Started");
             _canFire = true;
         }
 
@@ -50,7 +46,7 @@ namespace _Yeeker.BowTest.Scripts
         {
             if (!collision.gameObject.CompareTag("Bow"))
             {
-                Debug.Log(collision.gameObject.name, gameObject);
+                //Debug.Log(collision.gameObject.name, gameObject);
                 _rb.constraints = RigidbodyConstraints.FreezeAll;
             }
         }
