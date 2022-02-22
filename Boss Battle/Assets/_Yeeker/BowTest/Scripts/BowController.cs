@@ -13,10 +13,10 @@ namespace _Yeeker.BowTest.Scripts
             _player = FindObjectOfType<BowTesterMovement>().transform;
         }
 
-        void Update()
+        void Start()
         {
-            transform.position = _player.position + Vector3.up * 0.5f;
-            transform.eulerAngles = _playerCam.rotation.eulerAngles;
+            transform.SetParent(_playerCam);
         }
+        
     }
 }

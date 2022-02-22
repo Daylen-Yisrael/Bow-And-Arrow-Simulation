@@ -2,6 +2,6 @@ namespace _Yeeker.BowTest.Scripts
 {
     public interface IArrow
     { 
-        void Fire();
+        void Fire(float force);
     }
 }

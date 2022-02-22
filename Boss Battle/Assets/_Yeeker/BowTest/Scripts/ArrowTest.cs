@@ -1,41 +1,48 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using _Yeeker.BowTest.Scripts;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
-public class ArrowTest : MonoBehaviour, IArrow
+namespace _Yeeker.BowTest.Scripts
 {
-    Rigidbody _rb;
-    Collider _col;
-    bool _canFire;
+    public class ArrowTest : MonoBehaviour, IArrow
+    {
+        Rigidbody _rb;
+        Collider _col;
+        bool _canFire;
+        float _arrowForce;
     
-    void Awake()
-    {
-        _rb = GetComponent<Rigidbody>();
-        _col = GetComponent<Collider>();
-    }
-
-    void Start()
-    {
-        _rb.isKinematic = true;
-        _col.isTrigger = true;
-    }
-
-
-    void FixedUpdate()
-    {
-        if (_canFire)
+        void Awake()
         {
-            _rb.AddForce(Vector3.up * 50, ForceMode.Impulse);
-            _canFire = false;
+            _rb = GetComponent<Rigidbody>();
+            _col = GetComponent<Collider>();
         }
-    }
 
-    public void Fire()
-    {
-        _rb.isKinematic = false;
-        _col.isTrigger = false;
-        bool _canFire = true;
+        void Start()
+        {
+            _rb.isKinematic = true;
+            _col.isTrigger = true;
+            Debug.Log("Arrow Started");
+        }
+
+
+        void FixedUpdate()
+        {
+            if (_canFire)
+            {
+                _rb.isKinematic = false;
+                _col.isTrigger = false;
+                _rb.AddForce(transform.up * _arrowForce, ForceMode.Impulse);
+                _canFire = false;
+                Debug.Log("Arrow has been shot");
+
+            }
+        }
+
+        public void Fire(float force)
+        {
+            _arrowForce = force;
+            transform.SetParent(null);
+            Debug.Log("Fire Button Started");
+            _canFire = true;
+        }
     }
 }
