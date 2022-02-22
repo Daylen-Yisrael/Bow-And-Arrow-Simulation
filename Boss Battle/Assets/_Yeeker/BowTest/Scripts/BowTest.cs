@@ -12,36 +12,48 @@ namespace _Yeeker.BowTest.Scripts
         
         public GameObject _arrow;
         public float _arrowForce = 10;
-        public float _chargeTime = 60f;
+        public float _chargeTime = 0.5f;
         
+        bool _isDrawing;
         bool _loaded;
         IArrow arrow;
         GameObject obj;
+        float t;
 
         Vector3 stringStartPos;
 
         void Start()
         {
-            stringStartPos = _bowString.position;
+            t = 0;
+            stringStartPos = _bowString.localPosition;
         }
 
         void Update()
         {
-            ArrowInput();
+            BowInput();
+            BowDrawBack();
         }
 
-        void ArrowInput()
+        void BowDrawBack()
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (_isDrawing)
             {
-                //StartCoroutine(DrawBackCoroutine());
-            }   
-            
-            if(Input.GetKeyUp(KeyCode.R))
-            {
-               // StartCoroutine(StopDrawBackCoroutine());
+                t += Time.deltaTime;
+                t = Mathf.Clamp(t, 0f, _chargeTime);
+                
             }
 
+            if (!_isDrawing)
+            {
+                t -= Time.deltaTime;
+                t = Mathf.Clamp(t, 0f, _chargeTime);
+            }
+
+            _bowString.localPosition = Vector3.Lerp(stringStartPos, _fullyDrawn.localPosition, t/_chargeTime);
+        }
+
+        void BowInput()
+        {
             if (Input.GetKeyDown(KeyCode.Q) && !_loaded)
             {
 
@@ -61,9 +73,15 @@ namespace _Yeeker.BowTest.Scripts
 
             if (Input.GetMouseButtonDown(0) && _loaded)
             {
-                arrow?.Fire(_arrowForce);
-                arrow = null;
+                _isDrawing = true;
+            }
+
+            if (Input.GetMouseButtonUp(0) && _loaded)
+            {
                 _loaded = false;
+                arrow?.Fire(_arrowForce);
+                _isDrawing = false;
+                arrow = null;
             }
         }
         

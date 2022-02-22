@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9102106-7fab-4b0b-b474-8bd5bdc27055" name="Changes" comment="">
+    <list default="true" id="c9102106-7fab-4b0b-b474-8bd5bdc27055" name="Changes" comment="Bow Can Now Shoot">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Boss Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Boss Battle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Yeeker.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Yeeker.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Prefabs/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Prefabs/Arrow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/ArrowTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/ArrowTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/BowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/BowController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/BowTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/BowTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/IArrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/IArrow.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +18,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/dajay/Desktop/Unity Projects/Boss-Battle/Boss Battle/Assets/_Yeeker/BowTest/Prefabs/Arrow.prefab" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -70,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645385725307</updated>
       <workItem from="1645385734249" duration="8420000" />
-      <workItem from="1645485293179" duration="6122000" />
+      <workItem from="1645485293179" duration="7778000" />
     </task>
     <task id="LOCAL-00001" summary="Created a simple movable character to test out the bow, also added a bow that can't shoot">
       <created>1645458515047</created>
@@ -86,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645459696536</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Bow Can Now Shoot">
+      <created>1645495667991</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645495667991</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
@@ -107,6 +113,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Created a simple movable character to test out the bow, also added a bow that can't shoot" />
     <MESSAGE value="Added Bow Shooting Functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Bow Shooting Functionality" />
+    <MESSAGE value="Bow Can Now Shoot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bow Can Now Shoot" />
   </component>
 </project>
