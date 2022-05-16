@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c9102106-7fab-4b0b-b474-8bd5bdc27055" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Boss Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Boss Battle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Yeeker.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Yeeker.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/ArrowTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/ArrowTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/BowTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Yeeker/BowTest/Scripts/BowTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +65,7 @@
       <updated>1645385725307</updated>
       <workItem from="1645385734249" duration="8420000" />
       <workItem from="1645485293179" duration="9819000" />
-      <workItem from="1645567998243" duration="2681000" />
+      <workItem from="1645567998243" duration="3218000" />
     </task>
     <task id="LOCAL-00001" summary="Created a simple movable character to test out the bow, also added a bow that can't shoot">
       <created>1645458515047</created>
@@ -105,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645504360856</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Bow Can Now charge up and shoot based on distance">
+      <created>1645571143908</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1645571143908</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
@@ -129,6 +133,7 @@
     <MESSAGE value="Bow Can Now Shoot" />
     <MESSAGE value="Bow can now shoot and draw back arrow" />
     <MESSAGE value="Fixed Bugs with bow&#10;arrows now stick" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Bugs with bow&#10;arrows now stick" />
+    <MESSAGE value="Bow Can Now charge up and shoot based on distance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bow Can Now charge up and shoot based on distance" />
   </component>
 </project>
