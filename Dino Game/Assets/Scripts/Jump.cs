@@ -9,7 +9,7 @@ public class Jump : MonoBehaviour
     bool _jumpPressed = false;
     public float jumpVelocity = 18;
     bool _isGrounded = true;
-
+    public bool _gameOver = false;
     void Awake()
     {
         //_rb = GetComponent<Rigidbody2D>();
@@ -48,5 +48,15 @@ public class Jump : MonoBehaviour
     void OnCollisionExit2D(Collision2D other)
     {
         _isGrounded = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Obstacle"))
+        {
+            _rb.gravityScale = 0;
+            _rb.velocity = Vector2.zero;
+            _gameOver = true;
+        }
     }
 }

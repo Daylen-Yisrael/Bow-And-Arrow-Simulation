@@ -13,15 +13,8 @@ public class ObstacleSpawner : MonoBehaviour
     float _timer = 0;
     float _maxTime = 3;
     bool birdOrCact;
+    public int obstacleCount = 0;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        GameObject newObs = Instantiate(cactusObstacle);
-        newObs.transform.position = transform.position + new Vector3(0, -1.23f, 0);
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (_timer > _maxTime)
@@ -31,6 +24,7 @@ public class ObstacleSpawner : MonoBehaviour
             if (birdOrCact)
             {
                 GameObject newObs = Instantiate(birdObstacle);
+                obstacleCount++;
                 newObs.transform.position = transform.position + new Vector3(0, Random.Range(- 1, 1), 0);
                 Destroy(newObs, 10f);
             }
@@ -38,6 +32,7 @@ public class ObstacleSpawner : MonoBehaviour
             if (!birdOrCact)
             {
                 GameObject newObs = Instantiate(cactusObstacle);
+                obstacleCount++;
                 newObs.transform.position = transform.position + new Vector3(0, -1.23f, 0);
                 Destroy(newObs, 10f);
             }
