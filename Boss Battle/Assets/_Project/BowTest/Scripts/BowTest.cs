@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace _Yeeker.BowTest.Scripts
+namespace _Project.BowTest.Scripts
 {
     public class BowTest : MonoBehaviour
     {

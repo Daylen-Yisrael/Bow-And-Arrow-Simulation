@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace _Yeeker.BowTest.Scripts
+namespace _Project.BowTest.Scripts
 {
     public class BowTestCamera : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-namespace _Yeeker.BowTest.Scripts
+namespace _Project.BowTest.Scripts
 {
     public interface IArrow
     { 

@@ -2,7 +2,7 @@ using System;
 using TMPro.EditorUtilities;
 using UnityEngine;
 
-namespace _Yeeker.BowTest.Scripts
+namespace _Project.BowTest.Scripts
 {
     public class ArrowTest : MonoBehaviour, IArrow
     {
