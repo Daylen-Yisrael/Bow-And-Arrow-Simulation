@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Bow and Arrow Simulaton.unity
+    guid: 4db63f5a3c1e5ba4ca231db262500a44
   m_configObjects: {}

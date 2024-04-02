@@ -17,6 +17,14 @@ namespace _Project.BowTest.Scripts
         {
             transform.SetParent(_playerCam);
         }
-        
+
+        private void Update()
+        {
+            if (Input.GetKey("escape"))
+            {
+                Application.Quit();
+            }
+        }
+
     }
 }
